@@ -1,11 +1,20 @@
 // MUI의 Box, Button, TextField 사용
 import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import usePhoneBookStore from "../stores/usePhoneBookStore";
 
 const ContactForm = () => {
   // useState로 이름/전화번호 상태 관리
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const {addContact} = usePhoneBookStore()
+
+  const handleAddContact = () => {
+    if(!name.trim() || !phoneNumber.trim()) return
+    addContact(name, phoneNumber)
+    setName('')
+    setPhoneNumber('')
+  }
   return (
     // Box를 flex 컨테이너로 세로 배치, 중앙 정렬
     <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
@@ -25,7 +34,7 @@ const ContactForm = () => {
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
       />
-      <Button variant="contained" size="large">
+      <Button variant="contained" size="large" onClick={handleAddContact}>
         추가
       </Button>
     </Box>

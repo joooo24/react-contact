@@ -1,0 +1,56 @@
+.contact-form {
+  padding: 16px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* 반응형 분기점 1: 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .contact-form {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .contact-form__name-input,
+  .contact-form__phone-input,
+  .contact-form__submit-button {
+    max-width: 100%;
+  }
+}
+
+.contact-form__name-input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.contact-form__phone-input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.contact-form__submit-button {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+/* 반응형 분기점 2: PC (768px 이상) */
+@media (min-width: 768px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form__name-input {
+    max-width: 400px;
+  }
+
+  .contact-form__phone-input {
+    max-width: 400px;
+  }
+
+  .contact-form__submit-button {
+    max-width: 400px;
+  }
+}
+

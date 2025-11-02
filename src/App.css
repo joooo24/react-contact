@@ -1,0 +1,58 @@
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.app-title {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.grid-item {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 반응형 분기점 1: 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .grid-item {
+    width: 100%;
+  }
+}
+
+/* 반응형 분기점 2: PC (768px 이상) */
+@media (min-width: 768px) {
+  .app-container {
+    padding: 0 24px;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .grid-container {
+    flex-direction: row;
+  }
+
+  .grid-item {
+    width: 50%;
+    flex: 0 0 50%;
+  }
+}
